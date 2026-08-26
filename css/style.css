@@ -85,7 +85,11 @@ button {
   --batata-zona: 200px;           /* espaco livre reservado para o texto desviar da batata */
 
   /* ---- Papeis xadrez decorativos ---- */
-  --tamanho-xadrez: 200px;        /* largura dos papeis xadrez nos cantos */
+  --tamanho-xadrez: 240px;        /* largura dos papeis xadrez nos cantos */
+  /* Deslocamento para "empurrar" o papel ate o canto.
+     Use valores NEGATIVOS para grudar mais no canto (o excesso e cortado
+     pelo overflow do cartao). Ajuste ate encaixar como voce quer. */
+  --xadrez-offset: -40px;
 
   /* ---- Fontes ---- */
   --fonte-titulo: "FonteTitulo", system-ui, sans-serif;
