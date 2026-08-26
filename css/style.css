@@ -78,6 +78,11 @@ button {
   --tamanho-rede: 56px;           /* diametro do circulo das redes */
   --tamanho-rede-icone: 28px;     /* tamanho do icone dentro do circulo */
 
+  /* ---- Personagem batata (Caracteristicas) ---- */
+  --tamanho-batata: 150px;        /* largura da batata */
+  --batata-baixo: 20px;           /* distancia da batata ate a base do cartao */
+  --batata-direita: 30px;         /* distancia da batata ate a direita do cartao */
+
   /* ---- Fontes ---- */
   --fonte-titulo: "FonteTitulo", system-ui, sans-serif;
   --fonte-texto: "FonteTexto", system-ui, sans-serif;
@@ -261,6 +266,8 @@ body {
 .cartao--caracteristicas {
   flex-direction: column;
   align-items: flex-start;
+  position: relative;  /* base para posicionar a batata */
+  overflow: hidden;    /* nao deixa a batata vazar do cartao */
 }
 
 .caracteristicas__lista li {
@@ -274,6 +281,15 @@ body {
   position: absolute;
   left: 0;
   color: var(--cor-texto);
+}
+
+/* Personagem batata no canto inferior direito do cartao */
+.cartao__batata {
+  position: absolute;
+  right: var(--batata-direita);
+  bottom: var(--batata-baixo);
+  width: var(--tamanho-batata);
+  pointer-events: none;
 }
 
 /* ==========================================================================
@@ -351,6 +367,11 @@ body {
 
   .trailer__miniaturas {
     flex-wrap: wrap;
+  }
+
+  /* Batata menor no mobile para nao cobrir o texto */
+  .cartao__batata {
+    width: 90px;
   }
 
   :root {
