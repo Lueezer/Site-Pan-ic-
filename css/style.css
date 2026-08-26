@@ -1,9 +1,4 @@
-/* ==========================================================================
-   RESET DE CSS
-   ========================================================================== */
-*,
-*::before,
-*::after {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -42,8 +37,8 @@ button {
    ========================================================================== */
 @font-face {
   font-family: "FonteTitulo";
-  src: url("../assets/fontes/fonte-titulo.woff2") format("woff2"),
-       url("../assets/fontes/fonte-titulo.ttf") format("truetype");
+  src: url("/fontes/Grandstander-clean.otf") format("woff2"),
+    url("/fontes/Grandstander-clean.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -51,8 +46,8 @@ button {
 
 @font-face {
   font-family: "FonteTexto";
-  src: url("../assets/fontes/fonte-texto.woff2") format("woff2"),
-       url("../assets/fontes/fonte-texto.ttf") format("truetype");
+  src: url("/fontes/KOMTXT__.ttf") format("woff2"),
+    url("/fontes/KOMTXT__.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -63,15 +58,45 @@ button {
    ========================================================================== */
 :root {
   /* ---- Cores ---- */
-  --cor-header: #e0a884;          /* barra do topo e rodape (salmao) */
-  --cor-fundo: #fbe7c2;           /* fundo geral creme */
-  --cor-fundo-hero: #f8d69a;      /* fundo da area do logo Pan-ic */
-  --cor-texto: #4a3626;           /* marrom escuro do texto */
-  --cor-titulo: #4a3626;          /* marrom dos titulos */
-  --cor-cartao: #fdf6e3;          /* fundo claro dos cartoes */
-  --cor-player: #f5c98a;          /* fundo do player de trailer */
-  --cor-player-borda: #eeb877;    /* miniaturas do trailer */
+  --cor-header: #e0a884;
+  /* barra do topo e rodape (salmao) */
+  --cor-fundo: #fbe7c2;
+  /* fundo geral creme */
+  --cor-fundo-hero: #f8d69a;
+  /* fundo da area do logo Pan-ic */
+  --cor-texto: #4a3626;
+  /* marrom escuro do texto */
+  --cor-titulo: #4a3626;
+  /* marrom dos titulos */
+  --cor-cartao: #fdf6e3;
+  /* fundo claro dos cartoes */
+  --cor-player: #f5c98a;
+  /* fundo do player de trailer */
+  --cor-player-borda: #eeb877;
+  /* miniaturas do trailer */
   --cor-branco: #ffffff;
+  --cor-rede-fundo: #e6b78f;
+  /* circulo atras dos icones sociais (salmao) */
+
+  /* ---- Redes sociais ---- */
+  --tamanho-rede: 56px;
+  /* diametro do circulo das redes */
+  --tamanho-rede-icone: 28px;
+  /* tamanho do icone dentro do circulo */
+
+  /* ---- Personagem batata (Caracteristicas) ---- */
+  --tamanho-batata: 150px;
+  /* largura da batata */
+  --batata-baixo: 20px;
+  /* distancia da batata ate a base do cartao */
+  --batata-direita: 30px;
+  /* distancia da batata ate a direita do cartao */
+  --batata-zona: 200px;
+  /* espaco livre reservado para o texto desviar da batata */
+
+  /* ---- Papeis xadrez decorativos ---- */
+  --tamanho-xadrez: 200px;
+  /* largura dos papeis xadrez nos cantos */
 
   /* ---- Fontes ---- */
   --fonte-titulo: "FonteTitulo", system-ui, sans-serif;
@@ -84,9 +109,17 @@ button {
 
   /* ---- Layout ---- */
   --largura-max: 1000px;
-  --raio: 30px;               /* arredondamento dos cartoes */
+  --raio: 30px;
+  /* arredondamento dos cartoes */
   --raio-pequeno: 16px;
-  --espaco-secao: 60px;       /* espaco vertical entre secoes */
+  --espaco-secao: 60px;
+  /* espaco vertical entre secoes */
+
+  --largura-max: 1060px;
+  /* Largura fiel ao Figma */
+  --raio: 80px;
+  /* Arredondamento bem mais curvado para fechar nos cantos */
+
 }
 
 /* ==========================================================================
@@ -224,10 +257,57 @@ body {
 .cartao {
   background-color: var(--cor-cartao);
   border-radius: var(--raio);
-  padding: 40px;
+  padding: 50px 60px;
+  /* Aumenta o espaçamento interno para o conteúdo respirar */
   display: flex;
   align-items: center;
   gap: 32px;
+  position: relative;
+  overflow: hidden;
+  /* ISSO AQUI impede que o xadrez vaze a curva arredondada */
+  min-height: 480px;
+  /* Garante uma altura mais encorpada como no Figma */
+}
+
+/* Conteudo do cartao fica acima dos papeis decorativos */
+.cartao__texto,
+.cartao__personagem,
+.cartao__titulo,
+.caracteristicas__lista {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Papeis xadrez decorativos (cantos dos cartoes) ---- */
+.cartao__xadrez {
+  position: absolute;
+  width: 220px;
+  /* Tamanho levemente maior */
+  height: auto;
+  z-index: 0;
+  /* Fica no fundo, dentro do cartão */
+  pointer-events: none;
+}
+
+/* Ajuste fino dos cantos para alinhar com o corte do rasgo */
+.cartao__xadrez--sup-esq {
+  top: -10px;
+  left: -10px;
+}
+
+.cartao__xadrez--sup-dir {
+  top: -10px;
+  right: -10px;
+}
+
+.cartao__xadrez--inf-esq {
+  bottom: -10px;
+  left: -10px;
+}
+
+.cartao__xadrez--inf-dir {
+  bottom: -10px;
+  right: -10px;
 }
 
 .cartao__titulo {
@@ -256,19 +336,52 @@ body {
 .cartao--caracteristicas {
   flex-direction: column;
   align-items: flex-start;
+  justify-content: flex-start;
+  /* mantem o conteudo colado no topo */
+  padding-top: 16px;
+  /* menos espaco em cima -> textos mais para cima */
+  padding-bottom: 16px;
+  position: relative;
+  /*base para posicionar a batata*/
+  overflow: hidden;
+  /*nao deixa a batata vazar do cartao*/
+}
+
+/* Titulo de Caracteristicas mais colado no topo */
+.cartao--caracteristicas .cartao__titulo {
+  line-height: 1;
+  margin-top: 0;
+  margin-bottom: 12px;
 }
 
 .caracteristicas__lista li {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   padding-left: 20px;
   position: relative;
 }
 
 .caracteristicas__lista li::before {
-  content: "\00A7"; /* simbolo de paragrafo, como no wireframe */
+  content: "\00A7";
+  /* simbolo de paragrafo, como no wireframe */
   position: absolute;
   left: 0;
   color: var(--cor-texto);
+}
+
+/* Itens que ficam na altura da batata: reservam espaco a direita para o texto nao passar por baixo dela. Adicione a classe no <li>. */
+.caracteristicas__lista .item--desvia-batata {
+  padding-right: var(--batata-zona);
+}
+
+/* Personagem batata no canto inferior direito do cartao */
+.cartao__batata {
+  position: absolute;
+  right: var(--batata-direita);
+  bottom: var(--batata-baixo);
+  width: var(--tamanho-batata);
+  z-index: 2;
+  /*acima do papel xadrez no canto*/
+  pointer-events: none;
 }
 
 /* ==========================================================================
@@ -292,6 +405,16 @@ body {
   gap: 16px;
 }
 
+.redes__link {
+  width: var(--tamanho-rede);
+  height: var(--tamanho-rede);
+  border-radius: 50%;
+  background-color: var(--cor-rede-fundo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .redes__link img {
   width: 40px;
   height: 40px;
@@ -311,8 +434,9 @@ body {
 }
 
 .rodape__texto {
-  font-family: var(--fonte-titulo);
+  font-family: var(--fonte-texto);
   color: var(--cor-texto);
+  font-weight: bold;
 }
 
 /* ==========================================================================
@@ -336,6 +460,15 @@ body {
 
   .trailer__miniaturas {
     flex-wrap: wrap;
+  }
+
+  .cartao__batata {
+    width: 90px;
+  }
+
+  /* No mobile o texto ocupa a largura toda (batata fica embaixo do texto) */
+  .caracteristicas__lista .item--desvia-batata {
+    padding-right: 20px;
   }
 
   :root {

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pan-ic! | Narana Studio</title>
   <link rel="stylesheet" href="/css/style.css" />
 </head>
+
 <body>
 
   <!-- ============================= HEADER ============================= -->
@@ -13,7 +15,7 @@
     <div class="cabecalho__conteudo">
       <!-- A logo "Narana Studio" e o fundo atras dela sao imagens -->
       <a href="#inicio" class="cabecalho__logo">
-        <img src="assets/logo-narana-studio.png" alt="Narana Studio" />
+        <img src="/img/logo-narana-studio.png" alt="Narana Studio" />
       </a>
 
       <nav class="menu" aria-label="Menu principal">
@@ -32,7 +34,7 @@
     <section id="inicio" class="hero">
       <!-- A maior parte do fundo e uma imagem (rabiscos de utensilios) -->
       <div class="hero__logo">
-        <img src="assets/logo-panic.png" alt="Pan-ic!" />
+        <img src="/img/logo-panic.png" alt="Pan-ic!" />
       </div>
     </section>
 
@@ -58,8 +60,14 @@
     <!-- ============================= SOBRE ============================= -->
     <section id="sobre" class="secao secao--sobre">
       <div class="cartao cartao--sobre">
-        <img class="cartao__personagem cartao__personagem--esquerda"
-             src="assets/personagem-chef-verde.png" alt="Personagem chef" />
+        <!-- Papeis xadrez decorativos nos cantos -->
+        <img class="cartao__xadrez cartao__xadrez--sup-dir" src="/img/sobre/Xadrez_verde-SD.png" alt=""
+          aria-hidden="true" />
+        <img class="cartao__xadrez cartao__xadrez--inf-esq" src="/img/sobre/Xadrez_amarelo-IE.png" alt=""
+          aria-hidden="true" />
+        <!--Menina-->
+        <img class="cartao__personagem cartao__personagem--esquerda" src="/img/personagem-menina.png"
+          alt="Personagem chef" />
         <div class="cartao__texto">
           <h2 class="cartao__titulo">Sobre</h2>
           <p>
@@ -79,6 +87,11 @@
     <!-- ============================= GAMEPLAY ============================= -->
     <section class="secao secao--gameplay">
       <div class="cartao cartao--gameplay">
+        <!-- Papeis xadrez decorativos nos cantos -->
+        <img class="cartao__xadrez cartao__xadrez--sup-esq" src="/img/gameplay/Xadrez_vermelho-SE.png" alt=""
+          aria-hidden="true" />
+        <img class="cartao__xadrez cartao__xadrez--inf-dir" src="/img/gameplay/Xadrez_verde-ID.png" alt=""
+          aria-hidden="true" />
         <div class="cartao__texto">
           <h2 class="cartao__titulo">Gameplay</h2>
           <p>
@@ -91,15 +104,21 @@
             chao escorregadio ou ate tampa sua visao!
           </p>
         </div>
-        <img class="cartao__personagem cartao__personagem--direita"
-             src="assets/personagem-chef.png" alt="Personagem chef" />
+        <img class="cartao__personagem cartao__personagem--direita" src="/img/personagem-menino.png"
+          alt="Personagem chef" />
       </div>
     </section>
 
     <!-- ============================= CARACTERISTICAS ============================= -->
     <section class="secao secao--caracteristicas">
       <div class="cartao cartao--caracteristicas">
+        <!-- Papeis xadrez decorativos nos cantos -->
+        <img class="cartao__xadrez cartao__xadrez--sup-esq" src="/img/caracteristicas/Xadrez_amarelo-SE.png" alt=""
+          aria-hidden="true" />
+        <img class="cartao__xadrez cartao__xadrez--inf-dir" src="/img/caracteristicas/Xadrez_vermelho-ID.png" alt=""
+          aria-hidden="true" />
         <h2 class="cartao__titulo">Caracteristicas</h2>
+        <img class="cartao__batata" src="/img/batata.png" alt="Personagem batata chef" />
         <ul class="caracteristicas__lista">
           <li>Single-player</li>
           <li>
@@ -112,12 +131,12 @@
             ambiente adoravel e a adrenalina de uma cozinha profissional fora de
             controle.
           </li>
-          <li>
+          <li class="item--desvia-batata">
             <strong>Clientes Exigentes:</strong> Atenda pedidos especificos sob
             pressao e mantenha o foco na qualidade dos seus pratos, mesmo quando
             tudo estiver de ponta-cabeca.
           </li>
-          <li>
+          <li class="item--desvia-batata">
             <strong>Desbloqueie Conquistas:</strong> Mostre sua habilidade
             vencendo desafios unicos e colecionando trofeus que provam sua
             maestria na cozinha maluca de Pan-ic!
@@ -131,19 +150,19 @@
       <!-- A frigideira em chamas e uma imagem -->
       <nav class="redes" aria-label="Redes sociais">
         <a href="#" class="redes__link" aria-label="Facebook">
-          <img src="assets/icone-facebook.png" alt="Facebook" />
+          <img src="/img/icone-facebook.png" alt="Facebook" />
         </a>
         <a href="#" class="redes__link" aria-label="Instagram">
-          <img src="assets/icone-instagram.png" alt="Instagram" />
+          <img src="/img/icone-instagram.png" alt="Instagram" />
         </a>
         <a href="#" class="redes__link" aria-label="X">
-          <img src="assets/icone-x.png" alt="X" />
+          <img src="/img/icone-x.png" alt="X" />
         </a>
         <a href="#" class="redes__link" aria-label="YouTube">
-          <img src="assets/icone-youtube.png" alt="YouTube" />
+          <img src="/img/icone-youtube.png" alt="YouTube" />
         </a>
         <a href="#" class="redes__link" aria-label="TikTok">
-          <img src="assets/icone-tiktok.png" alt="TikTok" />
+          <img src="/img/icone-tiktok.png" alt="TikTok" />
         </a>
       </nav>
     </section>
@@ -155,4 +174,5 @@
   </footer>
 
 </body>
+
 </html>
