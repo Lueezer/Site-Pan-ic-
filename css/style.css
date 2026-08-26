@@ -82,6 +82,7 @@ button {
   --tamanho-batata: 150px;        /* largura da batata */
   --batata-baixo: 20px;           /* distancia da batata ate a base do cartao */
   --batata-direita: 30px;         /* distancia da batata ate a direita do cartao */
+  --batata-zona: 200px;           /* espaco livre reservado para o texto desviar da batata */
 
   /* ---- Fontes ---- */
   --fonte-titulo: "FonteTitulo", system-ui, sans-serif;
@@ -283,6 +284,12 @@ body {
   color: var(--cor-texto);
 }
 
+/* Itens que ficam na altura da batata: reservam espaco a direita
+   para o texto nao passar por baixo dela. Adicione a classe no <li>. */
+.caracteristicas__lista .item--desvia-batata {
+  padding-right: var(--batata-zona);
+}
+
 /* Personagem batata no canto inferior direito do cartao */
 .cartao__batata {
   position: absolute;
@@ -372,6 +379,11 @@ body {
   /* Batata menor no mobile para nao cobrir o texto */
   .cartao__batata {
     width: 90px;
+  }
+
+  /* No mobile o texto ocupa a largura toda (batata fica embaixo do texto) */
+  .caracteristicas__lista .item--desvia-batata {
+    padding-right: 20px;
   }
 
   :root {
