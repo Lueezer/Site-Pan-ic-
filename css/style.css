@@ -72,6 +72,11 @@ button {
   --cor-player: #f5c98a;          /* fundo do player de trailer */
   --cor-player-borda: #eeb877;    /* miniaturas do trailer */
   --cor-branco: #ffffff;
+  --cor-rede-fundo: #e6b78f;      /* circulo atras dos icones sociais (salmao) */
+
+  /* ---- Redes sociais ---- */
+  --tamanho-rede: 56px;           /* diametro do circulo das redes */
+  --tamanho-rede-icone: 28px;     /* tamanho do icone dentro do circulo */
 
   /* ---- Fontes ---- */
   --fonte-titulo: "FonteTitulo", system-ui, sans-serif;
@@ -292,9 +297,19 @@ body {
   gap: 16px;
 }
 
+.redes__link {
+  width: var(--tamanho-rede);
+  height: var(--tamanho-rede);
+  border-radius: 50%;
+  background-color: var(--cor-rede-fundo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .redes__link img {
-  width: 40px;
-  height: 40px;
+  width: var(--tamanho-rede-icone);
+  height: var(--tamanho-rede-icone);
 }
 
 .redes__link:hover {
