@@ -1,0 +1,344 @@
+/* ==========================================================================
+   RESET DE CSS
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+/* ==========================================================================
+   FONTES (fontes baixadas no PC)
+   Basta trocar o "src" pelo caminho/arquivo da sua fonte.
+   ========================================================================== */
+@font-face {
+  font-family: "FonteTitulo";
+  src: url("../assets/fontes/fonte-titulo.woff2") format("woff2"),
+       url("../assets/fontes/fonte-titulo.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FonteTexto";
+  src: url("../assets/fontes/fonte-texto.woff2") format("woff2"),
+       url("../assets/fontes/fonte-texto.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   VARIAVEIS (mude aqui para manutencao rapida do site)
+   ========================================================================== */
+:root {
+  /* ---- Cores ---- */
+  --cor-header: #e0a884;          /* barra do topo e rodape (salmao) */
+  --cor-fundo: #fbe7c2;           /* fundo geral creme */
+  --cor-fundo-hero: #f8d69a;      /* fundo da area do logo Pan-ic */
+  --cor-texto: #4a3626;           /* marrom escuro do texto */
+  --cor-titulo: #4a3626;          /* marrom dos titulos */
+  --cor-cartao: #fdf6e3;          /* fundo claro dos cartoes */
+  --cor-player: #f5c98a;          /* fundo do player de trailer */
+  --cor-player-borda: #eeb877;    /* miniaturas do trailer */
+  --cor-branco: #ffffff;
+
+  /* ---- Fontes ---- */
+  --fonte-titulo: "FonteTitulo", system-ui, sans-serif;
+  --fonte-texto: "FonteTexto", system-ui, sans-serif;
+
+  /* ---- Tamanhos de fonte ---- */
+  --fs-titulo: 2.5rem;
+  --fs-texto: 1rem;
+  --fs-menu: 1rem;
+
+  /* ---- Layout ---- */
+  --largura-max: 1000px;
+  --raio: 30px;               /* arredondamento dos cartoes */
+  --raio-pequeno: 16px;
+  --espaco-secao: 60px;       /* espaco vertical entre secoes */
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+body {
+  font-family: var(--fonte-texto);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  font-size: var(--fs-texto);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.cabecalho {
+  background-color: var(--cor-header);
+  padding: 12px 24px;
+}
+
+.cabecalho__conteudo {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.cabecalho__logo img {
+  height: 32px;
+}
+
+.menu__lista {
+  display: flex;
+  gap: 24px;
+}
+
+.menu__link {
+  font-family: var(--fonte-titulo);
+  font-size: var(--fs-menu);
+  color: var(--cor-texto);
+}
+
+.menu__link:hover {
+  opacity: 0.7;
+}
+
+/* ==========================================================================
+   HERO / INICIO
+   ========================================================================== */
+.hero {
+  background-color: var(--cor-fundo-hero);
+  /* Troque pela sua imagem de fundo (rabiscos de utensilios) */
+  background-image: url("../assets/fundo-utensilios.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 40px 24px 60px;
+}
+
+.hero__logo {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   TRAILER
+   ========================================================================== */
+.trailer {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: var(--espaco-secao) 24px;
+}
+
+.trailer__player-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.trailer__seta {
+  font-family: var(--fonte-titulo);
+  font-size: 2.5rem;
+  color: var(--cor-texto);
+  padding: 8px;
+}
+
+.trailer__seta:hover {
+  opacity: 0.7;
+}
+
+.trailer__player {
+  flex: 1;
+  max-width: 640px;
+  aspect-ratio: 16 / 9;
+  background-color: var(--cor-player);
+  border-radius: var(--raio);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trailer__play {
+  font-size: 3rem;
+  color: var(--cor-branco);
+}
+
+.trailer__miniaturas {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  max-width: 640px;
+  margin: 20px auto 0;
+}
+
+.trailer__miniatura {
+  flex: 1;
+  aspect-ratio: 16 / 9;
+  background-color: var(--cor-player);
+  border-radius: var(--raio-pequeno);
+}
+
+/* ==========================================================================
+   SECOES / CARTOES
+   ========================================================================== */
+.secao {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 20px 24px;
+}
+
+.cartao {
+  background-color: var(--cor-cartao);
+  border-radius: var(--raio);
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.cartao__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: var(--fs-titulo);
+  color: var(--cor-titulo);
+  margin-bottom: 16px;
+}
+
+.cartao__personagem {
+  width: 180px;
+  flex-shrink: 0;
+}
+
+.cartao__texto {
+  flex: 1;
+}
+
+/* Titulos das secoes Sobre e Gameplay ficam mais para o centro */
+.cartao--sobre .cartao__titulo,
+.cartao--gameplay .cartao__titulo {
+  text-align: center;
+}
+
+/* ---- Caracteristicas ---- */
+.cartao--caracteristicas {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.caracteristicas__lista li {
+  margin-bottom: 16px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.caracteristicas__lista li::before {
+  content: "\00A7"; /* simbolo de paragrafo, como no wireframe */
+  position: absolute;
+  left: 0;
+  color: var(--cor-texto);
+}
+
+/* ==========================================================================
+   FRIGIDEIRA + REDES SOCIAIS
+   ========================================================================== */
+.frigideira {
+  /* A frigideira em chamas e uma imagem de fundo */
+  background-image: url("../assets/frigideira-chamas.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+}
+
+.redes {
+  display: flex;
+  gap: 16px;
+}
+
+.redes__link img {
+  width: 40px;
+  height: 40px;
+}
+
+.redes__link:hover {
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.rodape {
+  background-color: var(--cor-header);
+  text-align: center;
+  padding: 16px;
+}
+
+.rodape__texto {
+  font-family: var(--fonte-titulo);
+  color: var(--cor-texto);
+}
+
+/* ==========================================================================
+   RESPONSIVO
+   ========================================================================== */
+@media (max-width: 768px) {
+  .cabecalho__conteudo {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cartao {
+    flex-direction: column;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .cartao--gameplay {
+    flex-direction: column-reverse;
+  }
+
+  .trailer__miniaturas {
+    flex-wrap: wrap;
+  }
+
+  :root {
+    --fs-titulo: 2rem;
+  }
+}

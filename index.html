@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pan-ic! | Narana Studio</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============================= HEADER ============================= -->
+  <header class="cabecalho">
+    <div class="cabecalho__conteudo">
+      <!-- A logo "Narana Studio" e o fundo atras dela sao imagens -->
+      <a href="#inicio" class="cabecalho__logo">
+        <img src="assets/logo-narana-studio.png" alt="Narana Studio" />
+      </a>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul class="menu__lista">
+          <li><a href="#inicio" class="menu__link">Inicio</a></li>
+          <li><a href="#trailer" class="menu__link">Trailer</a></li>
+          <li><a href="#sobre" class="menu__link">Sobre</a></li>
+          <li><a href="#contato" class="menu__link">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================= HERO / INICIO ============================= -->
+    <section id="inicio" class="hero">
+      <!-- A maior parte do fundo e uma imagem (rabiscos de utensilios) -->
+      <div class="hero__logo">
+        <img src="assets/logo-panic.png" alt="Pan-ic!" />
+      </div>
+    </section>
+
+    <!-- ============================= TRAILER ============================= -->
+    <section id="trailer" class="trailer">
+      <div class="trailer__player-area">
+        <button class="trailer__seta trailer__seta--esquerda" aria-label="Anterior">&lt;</button>
+
+        <div class="trailer__player">
+          <span class="trailer__play" aria-hidden="true">&#9658;</span>
+        </div>
+
+        <button class="trailer__seta trailer__seta--direita" aria-label="Proximo">&gt;</button>
+      </div>
+
+      <div class="trailer__miniaturas">
+        <div class="trailer__miniatura"></div>
+        <div class="trailer__miniatura"></div>
+        <div class="trailer__miniatura"></div>
+      </div>
+    </section>
+
+    <!-- ============================= SOBRE ============================= -->
+    <section id="sobre" class="secao secao--sobre">
+      <div class="cartao cartao--sobre">
+        <img class="cartao__personagem cartao__personagem--esquerda"
+             src="assets/personagem-chef-verde.png" alt="Personagem chef" />
+        <div class="cartao__texto">
+          <h2 class="cartao__titulo">Sobre</h2>
+          <p>
+            Em meio a um mundo fofo e colorido, prepare-se para encarar o caos
+            culinario mais frenetico que voce ja viu! Pan-ic! e um simulador de
+            culinaria agil. Gerencie a correria de uma cozinha profissional onde
+            nem tudo e o que parece. Nao se engane pelo visual bonitinho: aqui
+            voce tera que dominar receitas complexas e lutar contra o tempo para
+            satisfazer clientes extremamente exigentes, enquanto o mundo ao seu
+            redor tenta te atrapalhar. Prove que voce consegue manter a calma
+            para conquistar o sonho de ser um Chef 5 estrelas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= GAMEPLAY ============================= -->
+    <section class="secao secao--gameplay">
+      <div class="cartao cartao--gameplay">
+        <div class="cartao__texto">
+          <h2 class="cartao__titulo">Gameplay</h2>
+          <p>
+            Este e um jogo onde seu maior inimigo e o inesperado; o destino
+            decide seu desafio. Enquanto voce luta contra o tempo para entregar
+            os pedidos, o mundo ao seu redor se transforma: voce pode comecar o
+            dia cozinhando em um restaurante no Japao, na Italia ou nos Estados
+            Unidos, mas, na proxima fase, se encontrar no espaco sideral,
+            enquanto uma geleca invasora faz voce grudar nos moveis, deixa o
+            chao escorregadio ou ate tampa sua visao!
+          </p>
+        </div>
+        <img class="cartao__personagem cartao__personagem--direita"
+             src="assets/personagem-chef.png" alt="Personagem chef" />
+      </div>
+    </section>
+
+    <!-- ============================= CARACTERISTICAS ============================= -->
+    <section class="secao secao--caracteristicas">
+      <div class="cartao cartao--caracteristicas">
+        <h2 class="cartao__titulo">Caracteristicas</h2>
+        <ul class="caracteristicas__lista">
+          <li>Single-player</li>
+          <li>
+            <strong>Fases Imprevisiveis:</strong> As fases possuem modificadores
+            que mudam o cenario e a fisica do jogo, garantindo que nenhuma
+            partida seja igual a outra.
+          </li>
+          <li>
+            <strong>Do Fofo ao Caos:</strong> O contraste perfeito entre um
+            ambiente adoravel e a adrenalina de uma cozinha profissional fora de
+            controle.
+          </li>
+          <li>
+            <strong>Clientes Exigentes:</strong> Atenda pedidos especificos sob
+            pressao e mantenha o foco na qualidade dos seus pratos, mesmo quando
+            tudo estiver de ponta-cabeca.
+          </li>
+          <li>
+            <strong>Desbloqueie Conquistas:</strong> Mostre sua habilidade
+            vencendo desafios unicos e colecionando trofeus que provam sua
+            maestria na cozinha maluca de Pan-ic!
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================= FRIGIDEIRA + REDES SOCIAIS ============================= -->
+    <section id="contato" class="frigideira">
+      <!-- A frigideira em chamas e uma imagem -->
+      <nav class="redes" aria-label="Redes sociais">
+        <a href="#" class="redes__link" aria-label="Facebook">
+          <img src="assets/icone-facebook.png" alt="Facebook" />
+        </a>
+        <a href="#" class="redes__link" aria-label="Instagram">
+          <img src="assets/icone-instagram.png" alt="Instagram" />
+        </a>
+        <a href="#" class="redes__link" aria-label="X">
+          <img src="assets/icone-x.png" alt="X" />
+        </a>
+        <a href="#" class="redes__link" aria-label="YouTube">
+          <img src="assets/icone-youtube.png" alt="YouTube" />
+        </a>
+        <a href="#" class="redes__link" aria-label="TikTok">
+          <img src="assets/icone-tiktok.png" alt="TikTok" />
+        </a>
+      </nav>
+    </section>
+  </main>
+
+  <!-- ============================= FOOTER ============================= -->
+  <footer class="rodape">
+    <p class="rodape__texto">&copy; 2026 Narana Studio</p>
+  </footer>
+
+</body>
+</html>
