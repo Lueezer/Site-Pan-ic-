@@ -267,8 +267,16 @@ body {
 .cartao--caracteristicas {
   flex-direction: column;
   align-items: flex-start;
+  justify-content: flex-start; /* mantem o conteudo colado no topo */
+  padding-top: 24px;           /* menos espaco em cima -> textos mais para cima */
+  padding-bottom: 24px;
   position: relative;  /* base para posicionar a batata */
   overflow: hidden;    /* nao deixa a batata vazar do cartao */
+}
+
+/* Titulo de Caracteristicas mais colado no topo */
+.cartao--caracteristicas .cartao__titulo {
+  margin-bottom: 8px;
 }
 
 .caracteristicas__lista li {
