@@ -84,6 +84,9 @@ button {
   --batata-direita: 30px;         /* distancia da batata ate a direita do cartao */
   --batata-zona: 200px;           /* espaco livre reservado para o texto desviar da batata */
 
+  /* ---- Papeis xadrez decorativos ---- */
+  --tamanho-xadrez: 200px;        /* largura dos papeis xadrez nos cantos */
+
   /* ---- Fontes ---- */
   --fonte-titulo: "FonteTitulo", system-ui, sans-serif;
   --fonte-texto: "FonteTexto", system-ui, sans-serif;
@@ -239,7 +242,31 @@ body {
   display: flex;
   align-items: center;
   gap: 32px;
+  position: relative;  /* base para os papeis xadrez nos cantos */
+  overflow: hidden;    /* recorta os papeis no arredondamento do cartao */
 }
+
+/* Conteudo do cartao fica acima dos papeis decorativos */
+.cartao__texto,
+.cartao__personagem,
+.cartao__titulo,
+.caracteristicas__lista {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Papeis xadrez decorativos (cantos dos cartoes) ---- */
+.cartao__xadrez {
+  position: absolute;
+  width: var(--tamanho-xadrez);
+  z-index: 0;            /* atras do conteudo */
+  pointer-events: none;
+}
+
+.cartao__xadrez--sup-esq { top: 0; left: 0; }
+.cartao__xadrez--sup-dir { top: 0; right: 0; }
+.cartao__xadrez--inf-esq { bottom: 0; left: 0; }
+.cartao__xadrez--inf-dir { bottom: 0; right: 0; }
 
 .cartao__titulo {
   font-family: var(--fonte-titulo);
@@ -307,6 +334,7 @@ body {
   right: var(--batata-direita);
   bottom: var(--batata-baixo);
   width: var(--tamanho-batata);
+  z-index: 2;   /* acima do papel xadrez do canto */
   pointer-events: none;
 }
 
