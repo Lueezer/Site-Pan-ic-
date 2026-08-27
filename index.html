@@ -13,7 +13,6 @@
   <!-- ============================= HEADER ============================= -->
   <header class="cabecalho">
     <div class="cabecalho__conteudo">
-      <!-- A logo "Narana Studio" e o fundo atras dela sao imagens -->
       <a href="#inicio" class="cabecalho__logo">
         <img src="/img/logo-narana-studio.png" alt="Narana Studio" />
       </a>
@@ -25,6 +24,7 @@
           <li><a href="#sobre" class="menu__link">Sobre</a></li>
           <li><a href="#contato" class="menu__link">Contato</a></li>
         </ul>
+        <a href="#demo" class="botao-demo botao-demo--header">Jogue a Demo</a>
       </nav>
     </div>
   </header>
@@ -32,9 +32,11 @@
   <main>
     <!-- ============================= HERO / INICIO ============================= -->
     <section id="inicio" class="hero">
-      <!-- A maior parte do fundo e uma imagem (rabiscos de utensilios) -->
-      <div class="hero__logo">
-        <img src="/img/logo-panic.png" alt="Pan-ic!" />
+      <div class="hero__conteudo">
+        <div class="hero__logo">
+          <img src="/img/logo-panic.png" alt="Pan-ic!" />
+        </div>
+        <a href="#demo" class="botao-demo botao-demo--hero">Jogue a Demo</a>
       </div>
     </section>
 
@@ -60,12 +62,10 @@
     <!-- ============================= SOBRE ============================= -->
     <section id="sobre" class="secao secao--sobre">
       <div class="cartao cartao--sobre">
-        <!-- Papeis xadrez decorativos nos cantos -->
         <img class="cartao__xadrez cartao__xadrez--sup-dir" src="/img/sobre/Xadrez_verde-SD.png" alt=""
           aria-hidden="true" />
         <img class="cartao__xadrez cartao__xadrez--inf-esq" src="/img/sobre/Xadrez_amarelo-IE.png" alt=""
           aria-hidden="true" />
-        <!--Menina-->
         <img class="cartao__personagem cartao__personagem--esquerda" src="/img/personagem-menina.png"
           alt="Personagem chef" />
         <div class="cartao__texto">
@@ -87,7 +87,6 @@
     <!-- ============================= GAMEPLAY ============================= -->
     <section class="secao secao--gameplay">
       <div class="cartao cartao--gameplay">
-        <!-- Papeis xadrez decorativos nos cantos -->
         <img class="cartao__xadrez cartao__xadrez--sup-esq" src="/img/gameplay/Xadrez_vermelho-SE.png" alt=""
           aria-hidden="true" />
         <img class="cartao__xadrez cartao__xadrez--inf-dir" src="/img/gameplay/Xadrez_verde-ID.png" alt=""
@@ -112,7 +111,6 @@
     <!-- ============================= CARACTERISTICAS ============================= -->
     <section class="secao secao--caracteristicas">
       <div class="cartao cartao--caracteristicas">
-        <!-- Papeis xadrez decorativos nos cantos -->
         <img class="cartao__xadrez cartao__xadrez--sup-esq" src="/img/caracteristicas/Xadrez_amarelo-SE.png" alt=""
           aria-hidden="true" />
         <img class="cartao__xadrez cartao__xadrez--inf-dir" src="/img/caracteristicas/Xadrez_vermelho-ID.png" alt=""
@@ -146,25 +144,24 @@
     </section>
 
     <!-- ============================= FRIGIDEIRA + REDES SOCIAIS ============================= -->
-    <section id="contato" class="frigideira">
-      <!-- A frigideira em chamas e uma imagem -->
-      <nav class="redes" aria-label="Redes sociais">
-        <a href="#" class="redes__link" aria-label="Facebook">
-          <img src="/img/icone-facebook.png" alt="Facebook" />
-        </a>
-        <a href="#" class="redes__link" aria-label="Instagram">
-          <img src="/img/icone-instagram.png" alt="Instagram" />
-        </a>
-        <a href="#" class="redes__link" aria-label="X">
-          <img src="/img/icone-x.png" alt="X" />
-        </a>
-        <a href="#" class="redes__link" aria-label="YouTube">
-          <img src="/img/icone-youtube.png" alt="YouTube" />
-        </a>
-        <a href="#" class="redes__link" aria-label="TikTok">
-          <img src="/img/icone-tiktok.png" alt="TikTok" />
-        </a>
-      </nav>
+    <section id="contato" class="secao-frigideira">
+      <div class="secao-final">
+        <!-- Imagem gigante decorativa que fica no fundo à direita -->
+        <div class="frigideira-bg">
+          <img src="/img/frigideira-chamas.png" alt="frigideira-chamas" />
+        </div>
+
+        <!-- Elementos de interação (centralizados no fluxo normal) -->
+        <a href="#" class="botao-demo">Jogue a Demo</a>
+
+        <nav class="redes">
+          <a href="#" class="redes__link"><img src="/img/icone-facebook.png" alt="Facebook"></a>
+          <a href="#" class="redes__link"><img src="/img/icone-instagram.png" alt="Instagram"></a>
+          <a href="#" class="redes__link"><img src="/img/icone-x.png" alt="X"></a>
+          <a href="#" class="redes__link"><img src="/img/icone-youtube.png" alt="YouTube"></a>
+          <a href="#" class="redes__link"><img src="/img/icone-tiktok.png" alt="TikTok"></a>
+        </nav>
+      </div>
     </section>
   </main>
 

@@ -32,8 +32,7 @@ button {
 }
 
 /* ==========================================================================
-   FONTES (fontes baixadas no PC)
-   Basta trocar o "src" pelo caminho/arquivo da sua fonte.
+   FONTES
    ========================================================================== */
 @font-face {
   font-family: "FonteTitulo";
@@ -54,72 +53,39 @@ button {
 }
 
 /* ==========================================================================
-   VARIAVEIS (mude aqui para manutencao rapida do site)
+   VARIÁVEIS
    ========================================================================== */
 :root {
-  /* ---- Cores ---- */
   --cor-header: #e0a884;
-  /* barra do topo e rodape (salmao) */
   --cor-fundo: #fbe7c2;
-  /* fundo geral creme */
   --cor-fundo-hero: #f8d69a;
-  /* fundo da area do logo Pan-ic */
   --cor-texto: #4a3626;
-  /* marrom escuro do texto */
   --cor-titulo: #4a3626;
-  /* marrom dos titulos */
-  --cor-cartao: #fdf6e3;
-  /* fundo claro dos cartoes */
+  --cor-cartao: rgba(253, 246, 227, 0.82);
   --cor-player: #f5c98a;
-  /* fundo do player de trailer */
-  --cor-player-borda: #eeb877;
-  /* miniaturas do trailer */
   --cor-branco: #ffffff;
   --cor-rede-fundo: #e6b78f;
-  /* circulo atras dos icones sociais (salmao) */
 
-  /* ---- Redes sociais ---- */
   --tamanho-rede: 56px;
-  /* diametro do circulo das redes */
-  --tamanho-rede-icone: 28px;
-  /* tamanho do icone dentro do circulo */
 
-  /* ---- Personagem batata (Caracteristicas) ---- */
-  --tamanho-batata: 150px;
-  /* largura da batata */
-  --batata-baixo: 20px;
-  /* distancia da batata ate a base do cartao */
-  --batata-direita: 30px;
-  /* distancia da batata ate a direita do cartao */
-  --batata-zona: 200px;
-  /* espaco livre reservado para o texto desviar da batata */
+  --tamanho-batata: 180px;
+  --batata-baixo: 10px;
+  --batata-direita: 20px;
 
-  /* ---- Papeis xadrez decorativos ---- */
-  --tamanho-xadrez: 200px;
-  /* largura dos papeis xadrez nos cantos */
+  --tamanho-xadrez: 320px;
 
-  /* ---- Fontes ---- */
   --fonte-titulo: "FonteTitulo", system-ui, sans-serif;
   --fonte-texto: "FonteTexto", system-ui, sans-serif;
 
-  /* ---- Tamanhos de fonte ---- */
-  --fs-titulo: 2.5rem;
-  --fs-texto: 1rem;
-  --fs-menu: 1rem;
+  --fs-titulo: 4rem;
+  --fs-texto: 1.45rem;
+  --fs-menu: 1.15rem;
 
-  /* ---- Layout ---- */
-  --largura-max: 1000px;
-  --raio: 30px;
-  /* arredondamento dos cartoes */
-  --raio-pequeno: 16px;
-  --espaco-secao: 60px;
-  /* espaco vertical entre secoes */
-
-  --largura-max: 1060px;
-  /* Largura fiel ao Figma */
-  --raio: 80px;
-  /* Arredondamento bem mais curvado para fechar nos cantos */
-
+  --largura-max: min(92vw, 1280px);
+  
+  --raio: 65px;
+  --raio-pequeno: 18px;
+  --espaco-secao: 30px;
 }
 
 /* ==========================================================================
@@ -131,14 +97,21 @@ body {
   background-color: var(--cor-fundo);
   font-size: var(--fs-texto);
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 /* ==========================================================================
-   HEADER
+   HEADER & NAVEGAÇÃO
    ========================================================================== */
 .cabecalho {
   background-color: var(--cor-header);
-  padding: 12px 24px;
+  padding: 14px 32px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .cabecalho__conteudo {
@@ -147,26 +120,63 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
 }
 
 .cabecalho__logo img {
-  height: 32px;
+  height: 38px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 36px;
 }
 
 .menu__lista {
   display: flex;
-  gap: 24px;
+  gap: 28px;
 }
 
 .menu__link {
   font-family: var(--fonte-titulo);
   font-size: var(--fs-menu);
   color: var(--cor-texto);
+  transition: color 0.2s ease;
 }
 
 .menu__link:hover {
-  opacity: 0.7;
+  color: #ffffff;
+}
+
+.botao-demo {
+  background-color: #d9534f;
+  color: #ffffff;
+  font-family: var(--fonte-titulo);
+  font-weight: bold;
+  font-size: 1.15rem;
+  padding: 10px 24px;
+  border-radius: 20px;
+  box-shadow: 0 4px 0 #a93226;
+  display: inline-block;
+  text-align: center;
+  transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.botao-demo:hover {
+  transform: translateY(-2px);
+}
+
+.botao-demo--header {
+  background-color: #F0BE9F;
+  color: #4A3428;
+  box-shadow: 0 4px 0 #cfa385;
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding: 8px 22px;
+}
+
+.botao-demo--header:hover {
+  background-color: #e2b091;
 }
 
 /* ==========================================================================
@@ -174,17 +184,32 @@ body {
    ========================================================================== */
 .hero {
   background-color: var(--cor-fundo-hero);
-  /* Troque pela sua imagem de fundo (rabiscos de utensilios) */
   background-image: url("../assets/fundo-utensilios.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding: 40px 24px 60px;
+  padding: 140px 24px 60px;
 }
 
-.hero__logo {
-  max-width: 600px;
+.hero__conteudo {
+  max-width: var(--largura-max);
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.hero__logo img {
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.botao-demo--hero {
+  font-size: 1.45rem;
+  padding: 14px 42px;
+  border-radius: 25px;
 }
 
 /* ==========================================================================
@@ -205,7 +230,7 @@ body {
 
 .trailer__seta {
   font-family: var(--fonte-titulo);
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: var(--cor-texto);
   padding: 8px;
 }
@@ -216,7 +241,7 @@ body {
 
 .trailer__player {
   flex: 1;
-  max-width: 640px;
+  max-width: 850px;
   aspect-ratio: 16 / 9;
   background-color: var(--cor-player);
   border-radius: var(--raio);
@@ -226,7 +251,7 @@ body {
 }
 
 .trailer__play {
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: var(--cor-branco);
 }
 
@@ -234,8 +259,8 @@ body {
   display: flex;
   gap: 20px;
   justify-content: center;
-  max-width: 640px;
-  margin: 20px auto 0;
+  max-width: 850px;
+  margin: 24px auto 0;
 }
 
 .trailer__miniatura {
@@ -246,162 +271,163 @@ body {
 }
 
 /* ==========================================================================
-   SECOES / CARTOES
+   SEÇÕES / CARTÕES
    ========================================================================== */
 .secao {
   max-width: var(--largura-max);
   margin: 0 auto;
-  padding: 20px 24px;
+  padding: 12px 24px;
+  position: relative;
+  z-index: 10;
 }
 
 .cartao {
   background-color: var(--cor-cartao);
+  backdrop-filter: blur(6px);
   border-radius: var(--raio);
-  padding: 50px 60px;
-  /* Aumenta o espaçamento interno para o conteúdo respirar */
-  display: flex;
-  align-items: center;
-  gap: 32px;
+  padding: 36px 50px;
   position: relative;
   overflow: hidden;
-  /* ISSO AQUI impede que o xadrez vaze a curva arredondada */
+  z-index: 10;
+  
   min-height: 480px;
-  /* Garante uma altura mais encorpada como no Figma */
-}
-
-/* Conteudo do cartao fica acima dos papeis decorativos */
-.cartao__texto,
-.cartao__personagem,
-.cartao__titulo,
-.caracteristicas__lista {
-  position: relative;
-  z-index: 1;
-}
-
-/* ---- Papeis xadrez decorativos (cantos dos cartoes) ---- */
-.cartao__xadrez {
-  position: absolute;
-  width: 220px;
-  /* Tamanho levemente maior */
-  height: auto;
-  z-index: 0;
-  /* Fica no fundo, dentro do cartão */
-  pointer-events: none;
-}
-
-/* Ajuste fino dos cantos para alinhar com o corte do rasgo */
-.cartao__xadrez--sup-esq {
-  top: -10px;
-  left: -10px;
-}
-
-.cartao__xadrez--sup-dir {
-  top: -10px;
-  right: -10px;
-}
-
-.cartao__xadrez--inf-esq {
-  bottom: -10px;
-  left: -10px;
-}
-
-.cartao__xadrez--inf-dir {
-  bottom: -10px;
-  right: -10px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
 }
 
 .cartao__titulo {
   font-family: var(--fonte-titulo);
   font-size: var(--fs-titulo);
   color: var(--cor-titulo);
-  margin-bottom: 16px;
+  text-align: center;
+  margin-bottom: 24px;
+  line-height: 1.1;
 }
 
 .cartao__personagem {
-  width: 180px;
+  width: 260px;
   flex-shrink: 0;
+  z-index: 1;
 }
 
 .cartao__texto {
+  position: relative;
+  z-index: 1;
   flex: 1;
 }
 
-/* Titulos das secoes Sobre e Gameplay ficam mais para o centro */
-.cartao--sobre .cartao__titulo,
-.cartao--gameplay .cartao__titulo {
-  text-align: center;
+.cartao__texto p {
+  font-size: var(--fs-texto);
+  line-height: 1.55;
 }
 
-/* ---- Caracteristicas ---- */
+/* Papéis xadrez decorativos */
+.cartao__xadrez {
+  position: absolute;
+  width: var(--tamanho-xadrez);
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.cartao__xadrez--sup-esq { top: -30px; left: -30px; }
+.cartao__xadrez--sup-dir { top: -30px; right: -30px; }
+.cartao__xadrez--inf-esq { bottom: -30px; left: -30px; }
+.cartao__xadrez--inf-dir { bottom: -30px; right: -30px; }
+
+/* ---- Características ---- */
 .cartao--caracteristicas {
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  /* mantem o conteudo colado no topo */
-  padding-top: 16px;
-  /* menos espaco em cima -> textos mais para cima */
-  padding-bottom: 16px;
+  display: block;
+  height: auto;
+  min-height: unset;
+  padding: 40px 50px 45px;
   position: relative;
-  /*base para posicionar a batata*/
-  overflow: hidden;
-  /*nao deixa a batata vazar do cartao*/
+  z-index: 20;
 }
 
-/* Titulo de Caracteristicas mais colado no topo */
 .cartao--caracteristicas .cartao__titulo {
-  line-height: 1;
-  margin-top: 0;
   margin-bottom: 12px;
+}
+
+.caracteristicas__lista {
+  position: relative;
+  z-index: 2; /* Texto fica na FRENTE da batata */
+  width: 100%;
 }
 
 .caracteristicas__lista li {
-  margin-bottom: 12px;
-  padding-left: 20px;
+  margin-bottom: 6px;
+  padding-left: 28px;
   position: relative;
+  font-size: var(--fs-texto);
+  line-height: 1.4;
 }
 
 .caracteristicas__lista li::before {
   content: "\00A7";
-  /* simbolo de paragrafo, como no wireframe */
   position: absolute;
   left: 0;
   color: var(--cor-texto);
 }
 
-/* Itens que ficam na altura da batata: reservam espaco a direita para o texto nao passar por baixo dela. Adicione a classe no <li>. */
-.caracteristicas__lista .item--desvia-batata {
-  padding-right: var(--batata-zona);
-}
-
-/* Personagem batata no canto inferior direito do cartao */
 .cartao__batata {
   position: absolute;
   right: var(--batata-direita);
   bottom: var(--batata-baixo);
   width: var(--tamanho-batata);
-  z-index: 2;
-  /*acima do papel xadrez no canto*/
+  z-index: 1; /* Batata fica ATRÁS do texto */
   pointer-events: none;
 }
 
 /* ==========================================================================
-   FRIGIDEIRA + REDES SOCIAIS
+   SEÇÃO FINAL (FRIGIDEIRA + BOTÃO + REDES)
    ========================================================================== */
-.frigideira {
-  /* A frigideira em chamas e uma imagem de fundo */
-  background-image: url("../assets/frigideira-chamas.png");
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: contain;
-  min-height: 400px;
+.secao-frigideira {
+  position: relative;
+  width: 100%;
+}
+
+.secao-final {
+  position: relative;
+  width: 100%;
+  padding: 20px 0 40px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 40px 24px;
+  gap: 24px;
+}
+
+/* Imagem gigante da frigideira decorativa de fundo */
+.frigideira-bg {
+  position: absolute;
+  top: -120px;          /* Sobe bastante para entrar debaixo do cartão de Características */
+  right: -5vw;          /* Alinhada no canto direito */
+  width: 70vw;          /* Escala proporcional */
+  max-width: 1050px;
+  min-width: 550px;
+  z-index: 5;           /* Fica no fundo (atrás das redes e cartões) */
+  pointer-events: none;
+}
+
+.frigideira-bg img {
+  width: 100%;
+  height: auto;
+}
+
+.secao-final .botao-demo {
+  position: relative;
+  z-index: 20;          /* Botão fica acima de tudo no centro */
+  font-size: 1.4rem;
+  padding: 14px 40px;
+  margin-top: 60px;
 }
 
 .redes {
+  position: relative;
+  z-index: 20;          /* Redes sociais centralizadas */
   display: flex;
+  justify-content: center;
   gap: 16px;
 }
 
@@ -430,7 +456,9 @@ body {
 .rodape {
   background-color: var(--cor-header);
   text-align: center;
-  padding: 16px;
+  padding: 20px;
+  position: relative;
+  z-index: 30;
 }
 
 .rodape__texto {
@@ -442,7 +470,7 @@ body {
 /* ==========================================================================
    RESPONSIVO
    ========================================================================== */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .cabecalho__conteudo {
     flex-direction: column;
     gap: 12px;
@@ -450,12 +478,18 @@ body {
 
   .cartao {
     flex-direction: column;
-    padding: 24px;
+    padding: 30px 24px;
     text-align: center;
+    height: auto;
+    min-height: auto;
   }
 
   .cartao--gameplay {
     flex-direction: column-reverse;
+  }
+
+  .cartao__personagem {
+    width: 180px;
   }
 
   .trailer__miniaturas {
@@ -463,15 +497,17 @@ body {
   }
 
   .cartao__batata {
-    width: 90px;
+    width: 120px;
   }
 
-  /* No mobile o texto ocupa a largura toda (batata fica embaixo do texto) */
-  .caracteristicas__lista .item--desvia-batata {
-    padding-right: 20px;
+  .frigideira-bg {
+    top: -100px;
+    width: 90vw;
+    right: -10vw;
   }
 
   :root {
-    --fs-titulo: 2rem;
+    --fs-titulo: 2.8rem;
+    --fs-texto: 1.2rem;
   }
 }
