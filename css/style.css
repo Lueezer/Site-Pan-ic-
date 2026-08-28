@@ -1,3 +1,62 @@
+/* ==================== FONTES ==================== */
+@font-face {
+  font-family: "FonteTitulo";
+  src: url("/fontes/Grandstander-clean.otf") format("opentype"),
+    url("/fontes/Grandstander-clean.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FonteTexto";
+  src: url("/fontes/KOMTXT__.ttf") format("woff2"),
+    url("/fontes/KOMTXT__.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==================== VARIÁVEIS ==================== */
+:root {
+  --cor-header: #e0a884;
+  --cor-fundo: #fbe7c2;
+  --cor-fundo-hero: #f8c575;
+  --cor-texto: #4a3626;
+  --cor-titulo: #4a3626;
+  --cor-cartao: rgba(253, 246, 227, 0.82);
+  --cor-player: #f5c98a;
+  --cor-branco: #ffffff;
+  --cor-rede-fundo: #e6b78f;
+  
+  --cor-botao-bg: #d9534f;
+  --cor-botao-sombra: #a93226;
+  --cor-header-botao-bg: #F0BE9F;
+  --cor-header-botao-texto: #4A3428;
+  --cor-header-botao-sombra: #cfa385;
+  --cor-navbar-botao-hover: #e2b091;
+  --cor-header-botao-hover: #bc3a2e;
+
+  --tamanho-rede: 56px;
+  --tamanho-batata: 180px;
+  --batata-baixo: 10px;
+  --batata-direita: 20px;
+  --tamanho-xadrez: 320px;
+
+  --fonte-titulo: "FonteTitulo", system-ui, sans-serif;
+  --fonte-texto: "FonteTexto", system-ui, sans-serif;
+
+  --fs-titulo: 4rem;
+  --fs-texto: 1.45rem;
+  --fs-menu: 1.15rem;
+
+  --largura-max: min(92vw, 1280px);
+  --raio: 65px;
+  --raio-pequeno: 18px;
+  --espaco-secao: 30px;
+}
+
+/* ==================== RESET & ESTILOS BASE ==================== */
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +65,15 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte-texto);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  font-size: var(--fs-texto);
+  line-height: 1.5;
+  overflow-x: hidden;
 }
 
 img {
@@ -31,79 +99,33 @@ button {
   color: inherit;
 }
 
-/* ==========================================================================
-   FONTES
-   ========================================================================== */
-@font-face {
-  font-family: "FonteTitulo";
-  src: url("/fontes/Grandstander-clean.otf") format("woff2"),
-    url("/fontes/Grandstander-clean.otf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+/* ==================== FUNDO ANIMADO ==================== */
+.fundo-animado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image: url("/img/Fundo\ Elementos.png");
+  background-repeat: repeat;
+  background-size: 650px auto;
+  opacity: 0.6;
+  z-index: 1;
+  pointer-events: none;
+  animation: moverFundo 40s linear infinite;
 }
 
-@font-face {
-  font-family: "FonteTexto";
-  src: url("/fontes/KOMTXT__.ttf") format("woff2"),
-    url("/fontes/KOMTXT__.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+@keyframes moverFundo {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-500px, -500px);
+  }
 }
 
-/* ==========================================================================
-   VARIÁVEIS
-   ========================================================================== */
-:root {
-  --cor-header: #e0a884;
-  --cor-fundo: #fbe7c2;
-  --cor-fundo-hero: #f8d69a;
-  --cor-texto: #4a3626;
-  --cor-titulo: #4a3626;
-  --cor-cartao: rgba(253, 246, 227, 0.82);
-  --cor-player: #f5c98a;
-  --cor-branco: #ffffff;
-  --cor-rede-fundo: #e6b78f;
-
-  --tamanho-rede: 56px;
-
-  --tamanho-batata: 180px;
-  --batata-baixo: 10px;
-  --batata-direita: 20px;
-
-  --tamanho-xadrez: 320px;
-
-  --fonte-titulo: "FonteTitulo", system-ui, sans-serif;
-  --fonte-texto: "FonteTexto", system-ui, sans-serif;
-
-  --fs-titulo: 4rem;
-  --fs-texto: 1.45rem;
-  --fs-menu: 1.15rem;
-
-  --largura-max: min(92vw, 1280px);
-  
-  --raio: 65px;
-  --raio-pequeno: 18px;
-  --espaco-secao: 30px;
-}
-
-/* ==========================================================================
-   BASE
-   ========================================================================== */
-body {
-  font-family: var(--fonte-texto);
-  color: var(--cor-texto);
-  background-color: var(--cor-fundo);
-  font-size: var(--fs-texto);
-  line-height: 1.5;
-  overflow-x: hidden;
-}
-
-/* ==========================================================================
-   HEADER & NAVEGAÇÃO
-   ========================================================================== */
-.cabecalho {
+/* ==================== NAVBAR & MENU ==================== */
+.navbar {
   background-color: var(--cor-header);
   padding: 14px 32px;
   position: fixed;
@@ -114,7 +136,7 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.cabecalho__conteudo {
+.navbar__conteudo {
   max-width: var(--largura-max);
   margin: 0 auto;
   display: flex;
@@ -122,7 +144,7 @@ body {
   justify-content: space-between;
 }
 
-.cabecalho__logo img {
+.navbar__logo img {
   height: 38px;
 }
 
@@ -145,18 +167,19 @@ body {
 }
 
 .menu__link:hover {
-  color: #ffffff;
+  color: var(--cor-branco);
 }
 
+/* ==================== BOTÕES ==================== */
 .botao-demo {
-  background-color: #d9534f;
-  color: #ffffff;
+  background-color: var(--cor-botao-bg);
+  color: var(--cor-branco);
   font-family: var(--fonte-titulo);
   font-weight: bold;
   font-size: 1.15rem;
   padding: 10px 24px;
   border-radius: 20px;
-  box-shadow: 0 4px 0 #a93226;
+  box-shadow: 0 4px 0 var(--cor-botao-sombra);
   display: inline-block;
   text-align: center;
   transition: transform 0.1s ease, background-color 0.2s ease;
@@ -164,31 +187,31 @@ body {
 
 .botao-demo:hover {
   transform: translateY(-2px);
+  background-color: var(--cor-header-botao-hover);
 }
 
 .botao-demo--header {
-  background-color: #F0BE9F;
-  color: #4A3428;
-  box-shadow: 0 4px 0 #cfa385;
+  background-color: var(--cor-header-botao-bg);
+  color: var(--cor-header-botao-texto);
+  box-shadow: 0 4px 0 var(--cor-header-botao-sombra);
   text-transform: uppercase;
   font-size: 1rem;
   padding: 8px 22px;
 }
 
 .botao-demo--header:hover {
-  background-color: #e2b091;
+  background-color: var(--cor-navbar-botao-hover);
+  color: var(--cor-branco)
 }
 
-/* ==========================================================================
-   HERO / INICIO
-   ========================================================================== */
+/* ==================== HERO ==================== */
 .hero {
-  background-color: var(--cor-fundo-hero);
-  background-image: url("../assets/fundo-utensilios.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(180deg, var(--cor-fundo-hero) 70%, var(--cor-fundo) 100%);
   padding: 140px 24px 60px;
+  
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
 }
 
 .hero__conteudo {
@@ -198,6 +221,8 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 24px;
+  position: relative;
+  z-index: 2;
 }
 
 .hero__logo img {
@@ -212,36 +237,38 @@ body {
   border-radius: 25px;
 }
 
-/* ==========================================================================
-   TRAILER
-   ========================================================================== */
+/* ==================== TRAILER E SCREENSHOTS ==================== */
 .trailer {
   max-width: var(--largura-max);
   margin: 0 auto;
-  padding: var(--espaco-secao) 24px;
+  padding: 16px 24px;
+  position: relative;
+  z-index: 2;
 }
 
 .trailer__player-area {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 16px;
 }
 
 .trailer__seta {
   font-family: var(--fonte-titulo);
-  font-size: 3rem;
+  font-size: 2.2rem;
   color: var(--cor-texto);
-  padding: 8px;
+  padding: 4px;
+  transition: transform 0.2s ease, color 0.2s ease; /* Corrigido: adicionado 's' no 0.2s */
 }
 
 .trailer__seta:hover {
-  opacity: 0.7;
+  color: var(--cor-branco);
+  transform: scale(1.15);
 }
 
 .trailer__player {
   flex: 1;
-  max-width: 850px;
+  max-width: 700px;
   aspect-ratio: 16 / 9;
   background-color: var(--cor-player);
   border-radius: var(--raio);
@@ -257,10 +284,10 @@ body {
 
 .trailer__miniaturas {
   display: flex;
-  gap: 20px;
+  gap: 14px;
   justify-content: center;
-  max-width: 850px;
-  margin: 24px auto 0;
+  max-width: 700px;
+  margin: 12px auto 0;
 }
 
 .trailer__miniatura {
@@ -268,11 +295,16 @@ body {
   aspect-ratio: 16 / 9;
   background-color: var(--cor-player);
   border-radius: var(--raio-pequeno);
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-/* ==========================================================================
-   SEÇÕES / CARTÕES
-   ========================================================================== */
+.trailer__miniatura:hover {
+  transform: translateY(-3px); /* Corrigido: 'translatey' para 'translateY' */
+  opacity: 0.9;
+}
+
+/* ==================== CARTÕES ==================== */
 .secao {
   max-width: var(--largura-max);
   margin: 0 auto;
@@ -283,13 +315,13 @@ body {
 
 .cartao {
   background-color: var(--cor-cartao);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: var(--raio);
   padding: 36px 50px;
   position: relative;
   overflow: hidden;
   z-index: 10;
-  
   min-height: 480px;
   display: flex;
   align-items: center;
@@ -322,7 +354,6 @@ body {
   line-height: 1.55;
 }
 
-/* Papéis xadrez decorativos */
 .cartao__xadrez {
   position: absolute;
   width: var(--tamanho-xadrez);
@@ -336,14 +367,11 @@ body {
 .cartao__xadrez--inf-esq { bottom: -30px; left: -30px; }
 .cartao__xadrez--inf-dir { bottom: -30px; right: -30px; }
 
-/* ---- Características ---- */
+/* ==================== CARTÃO CARACTERÍSTICAS ==================== */
 .cartao--caracteristicas {
   display: block;
-  height: auto;
-  min-height: unset;
+  min-height: auto;
   padding: 40px 50px 45px;
-  position: relative;
-  z-index: 20;
 }
 
 .cartao--caracteristicas .cartao__titulo {
@@ -352,12 +380,12 @@ body {
 
 .caracteristicas__lista {
   position: relative;
-  z-index: 2; /* Texto fica na FRENTE da batata */
+  z-index: 2;
   width: 100%;
 }
 
 .caracteristicas__lista li {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   padding-left: 28px;
   position: relative;
   font-size: var(--fs-texto);
@@ -371,61 +399,59 @@ body {
   color: var(--cor-texto);
 }
 
+.caracteristicas__lista li:nth-child(n+4) {
+  padding-right: 170px;
+}
+
 .cartao__batata {
   position: absolute;
   right: var(--batata-direita);
   bottom: var(--batata-baixo);
   width: var(--tamanho-batata);
-  z-index: 1; /* Batata fica ATRÁS do texto */
+  z-index: 1;
   pointer-events: none;
 }
 
-/* ==========================================================================
-   SEÇÃO FINAL (FRIGIDEIRA + BOTÃO + REDES)
-   ========================================================================== */
+/* ==================== FRIGIDEIRA E CONTATO ==================== */
 .secao-frigideira {
   position: relative;
   width: 100%;
+  z-index: 2;
 }
 
 .secao-final {
   position: relative;
   width: 100%;
-  padding: 20px 0 40px;
+  padding: 40px 0 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
 }
 
-/* Imagem gigante da frigideira decorativa de fundo */
 .frigideira-bg {
   position: absolute;
-  top: -120px;          /* Sobe bastante para entrar debaixo do cartão de Características */
-  right: -5vw;          /* Alinhada no canto direito */
-  width: 70vw;          /* Escala proporcional */
+  bottom: 0;
+  right: 0;
+  width: 55vw;
   max-width: 1050px;
   min-width: 550px;
-  z-index: 5;           /* Fica no fundo (atrás das redes e cartões) */
+  z-index: 2;
   pointer-events: none;
-}
-
-.frigideira-bg img {
-  width: 100%;
-  height: auto;
 }
 
 .secao-final .botao-demo {
   position: relative;
-  z-index: 20;          /* Botão fica acima de tudo no centro */
+  z-index: 20;
   font-size: 1.4rem;
   padding: 14px 40px;
-  margin-top: 60px;
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
 
 .redes {
   position: relative;
-  z-index: 20;          /* Redes sociais centralizadas */
+  z-index: 20;
   display: flex;
   justify-content: center;
   gap: 16px;
@@ -439,6 +465,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: opacity 0.2s ease;
 }
 
 .redes__link img {
@@ -450,64 +477,17 @@ body {
   opacity: 0.8;
 }
 
-/* ==========================================================================
-   FOOTER
-   ========================================================================== */
-.rodape {
+/* ==================== FOOTER ==================== */
+.footer {
   background-color: var(--cor-header);
   text-align: center;
   padding: 20px;
   position: relative;
-  z-index: 30;
+  z-index: 50;
 }
 
-.rodape__texto {
+.footer__texto {
   font-family: var(--fonte-texto);
   color: var(--cor-texto);
   font-weight: bold;
-}
-
-/* ==========================================================================
-   RESPONSIVO
-   ========================================================================== */
-@media (max-width: 900px) {
-  .cabecalho__conteudo {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .cartao {
-    flex-direction: column;
-    padding: 30px 24px;
-    text-align: center;
-    height: auto;
-    min-height: auto;
-  }
-
-  .cartao--gameplay {
-    flex-direction: column-reverse;
-  }
-
-  .cartao__personagem {
-    width: 180px;
-  }
-
-  .trailer__miniaturas {
-    flex-wrap: wrap;
-  }
-
-  .cartao__batata {
-    width: 120px;
-  }
-
-  .frigideira-bg {
-    top: -100px;
-    width: 90vw;
-    right: -10vw;
-  }
-
-  :root {
-    --fs-titulo: 2.8rem;
-    --fs-texto: 1.2rem;
-  }
 }

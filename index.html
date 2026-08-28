@@ -10,10 +10,10 @@
 
 <body>
 
-  <!-- ============================= HEADER ============================= -->
-  <header class="cabecalho">
-    <div class="cabecalho__conteudo">
-      <a href="#inicio" class="cabecalho__logo">
+  <!-- ==================== NAVBAR ==================== -->
+  <header class="navbar">
+    <div class="navbar__conteudo">
+      <a href="#inicio" class="navbar__logo">
         <img src="/img/logo-narana-studio.png" alt="Narana Studio" />
       </a>
 
@@ -30,8 +30,9 @@
   </header>
 
   <main>
-    <!-- ============================= HERO / INICIO ============================= -->
+    <!-- ==================== HERO ==================== -->
     <section id="inicio" class="hero">
+      <div class="fundo-animado"></div>
       <div class="hero__conteudo">
         <div class="hero__logo">
           <img src="/img/logo-panic.png" alt="Pan-ic!" />
@@ -40,7 +41,7 @@
       </div>
     </section>
 
-    <!-- ============================= TRAILER ============================= -->
+    <!-- ==================== TRAILER SCREENSHORTS ==================== -->
     <section id="trailer" class="trailer">
       <div class="trailer__player-area">
         <button class="trailer__seta trailer__seta--esquerda" aria-label="Anterior">&lt;</button>
@@ -59,15 +60,12 @@
       </div>
     </section>
 
-    <!-- ============================= SOBRE ============================= -->
+    <!-- ==================== SOBRE ==================== -->
     <section id="sobre" class="secao secao--sobre">
       <div class="cartao cartao--sobre">
-        <img class="cartao__xadrez cartao__xadrez--sup-dir" src="/img/sobre/Xadrez_verde-SD.png" alt=""
-          aria-hidden="true" />
-        <img class="cartao__xadrez cartao__xadrez--inf-esq" src="/img/sobre/Xadrez_amarelo-IE.png" alt=""
-          aria-hidden="true" />
-        <img class="cartao__personagem cartao__personagem--esquerda" src="/img/personagem-menina.png"
-          alt="Personagem chef" />
+        <img class="cartao__xadrez cartao__xadrez--sup-dir" src="/img/sobre/Xadrez_verde-SD.png" alt="" aria-hidden="true" />
+        <img class="cartao__xadrez cartao__xadrez--inf-esq" src="/img/sobre/Xadrez_amarelo-IE.png" alt="" aria-hidden="true" />
+        <img class="cartao__personagem cartao__personagem--esquerda" src="/img/personagem-menina.png" alt="Personagem chef" />
         <div class="cartao__texto">
           <h2 class="cartao__titulo">Sobre</h2>
           <p>
@@ -84,13 +82,11 @@
       </div>
     </section>
 
-    <!-- ============================= GAMEPLAY ============================= -->
+    <!-- ==================== GAMEPLAY ==================== -->
     <section class="secao secao--gameplay">
       <div class="cartao cartao--gameplay">
-        <img class="cartao__xadrez cartao__xadrez--sup-esq" src="/img/gameplay/Xadrez_vermelho-SE.png" alt=""
-          aria-hidden="true" />
-        <img class="cartao__xadrez cartao__xadrez--inf-dir" src="/img/gameplay/Xadrez_verde-ID.png" alt=""
-          aria-hidden="true" />
+        <img class="cartao__xadrez cartao__xadrez--sup-esq" src="/img/gameplay/Xadrez_vermelho-SE.png" alt="" aria-hidden="true" />
+        <img class="cartao__xadrez cartao__xadrez--inf-dir" src="/img/gameplay/Xadrez_verde-ID.png" alt="" aria-hidden="true" />
         <div class="cartao__texto">
           <h2 class="cartao__titulo">Gameplay</h2>
           <p>
@@ -103,18 +99,15 @@
             chao escorregadio ou ate tampa sua visao!
           </p>
         </div>
-        <img class="cartao__personagem cartao__personagem--direita" src="/img/personagem-menino.png"
-          alt="Personagem chef" />
+        <img class="cartao__personagem cartao__personagem--direita" src="/img/personagem-menino.png" alt="Personagem chef" />
       </div>
     </section>
 
-    <!-- ============================= CARACTERISTICAS ============================= -->
+    <!-- ==================== CARACTERÍSTICAS ==================== -->
     <section class="secao secao--caracteristicas">
       <div class="cartao cartao--caracteristicas">
-        <img class="cartao__xadrez cartao__xadrez--sup-esq" src="/img/caracteristicas/Xadrez_amarelo-SE.png" alt=""
-          aria-hidden="true" />
-        <img class="cartao__xadrez cartao__xadrez--inf-dir" src="/img/caracteristicas/Xadrez_vermelho-ID.png" alt=""
-          aria-hidden="true" />
+        <img class="cartao__xadrez cartao__xadrez--sup-esq" src="/img/caracteristicas/Xadrez_amarelo-SE.png" alt="" aria-hidden="true" />
+        <img class="cartao__xadrez cartao__xadrez--inf-dir" src="/img/caracteristicas/Xadrez_vermelho-ID.png" alt="" aria-hidden="true" />
         <h2 class="cartao__titulo">Caracteristicas</h2>
         <img class="cartao__batata" src="/img/batata.png" alt="Personagem batata chef" />
         <ul class="caracteristicas__lista">
@@ -143,16 +136,14 @@
       </div>
     </section>
 
-    <!-- ============================= FRIGIDEIRA + REDES SOCIAIS ============================= -->
+    <!-- ==================== FRIGIDEIRA E CONTATO ==================== -->
     <section id="contato" class="secao-frigideira">
       <div class="secao-final">
-        <!-- Imagem gigante decorativa que fica no fundo à direita -->
         <div class="frigideira-bg">
           <img src="/img/frigideira-chamas.png" alt="frigideira-chamas" />
         </div>
 
-        <!-- Elementos de interação (centralizados no fluxo normal) -->
-        <a href="#" class="botao-demo">Jogue a Demo</a>
+        <a href="#demo" class="botao-demo">Jogue a Demo</a>
 
         <nav class="redes">
           <a href="#" class="redes__link"><img src="/img/icone-facebook.png" alt="Facebook"></a>
@@ -165,9 +156,9 @@
     </section>
   </main>
 
-  <!-- ============================= FOOTER ============================= -->
-  <footer class="rodape">
-    <p class="rodape__texto">&copy; 2026 Narana Studio</p>
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <p class="footer__texto">&copy; 2026 Narana Studio</p>
   </footer>
 
 </body>
