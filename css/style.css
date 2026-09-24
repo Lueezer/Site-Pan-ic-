@@ -491,3 +491,158 @@ button {
   color: var(--cor-texto);
   font-weight: bold;
 }
+
+/* ==================== MEDIA QUERIES (RESPONSIVIDADE) ==================== */
+
+/* Tablets e notebooks pequenos (até 1024px) */
+@media (max-width: 1024px) {
+  :root {
+    --fs-titulo: 3rem;
+    --fs-texto: 1.25rem;
+    --raio: 45px;
+    --tamanho-xadrez: 220px;
+  }
+
+  .cartao {
+    padding: 30px 36px;
+    gap: 24px;
+    min-height: auto;
+  }
+
+  .cartao__personagem {
+    width: 200px;
+  }
+
+  .cartao__batata {
+    width: 140px;
+  }
+
+  .caracteristicas__lista li:nth-child(n+4) {
+    padding-right: 130px;
+  }
+}
+
+/* Smartphones em modo paisagem e Tablets menores (até 768px) */
+@media (max-width: 768px) {
+  :root {
+    --fs-titulo: 2.5rem;
+    --fs-texto: 1.1rem;
+    --fs-menu: 1rem;
+    --raio: 35px;
+    --tamanho-xadrez: 160px;
+  }
+
+  .navbar {
+    padding: 12px 16px;
+  }
+
+  .navbar__conteudo {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .menu__lista {
+    gap: 16px;
+  }
+
+  .hero {
+    padding: 150px 16px 40px;
+  }
+
+  .cartao {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 24px;
+  }
+
+  .cartao--gameplay {
+    flex-direction: column-reverse;
+  }
+
+  .cartao__personagem {
+    width: 180px;
+    margin: 0 auto;
+  }
+
+  .cartao--caracteristicas {
+    padding: 30px 24px 100px;
+  }
+
+  .caracteristicas__lista {
+    text-align: left;
+  }
+
+  .caracteristicas__lista li:nth-child(n+4) {
+    padding-right: 0;
+  }
+
+  .cartao__batata {
+    width: 110px;
+    right: 15px;
+    bottom: 10px;
+  }
+
+  .trailer__player {
+    border-radius: var(--raio-pequeno);
+  }
+
+  .frigideira-bg {
+    width: 90vw;
+    min-width: 300px;
+    opacity: 0.8;
+  }
+
+  .secao-final .botao-demo {
+    margin-top: 20px;
+    margin-bottom: 60px;
+  }
+
+  .redes {
+    flex-wrap: wrap;
+  }
+}
+
+/* Smartphones (até 480px) */
+@media (max-width: 480px) {
+  :root {
+    --fs-titulo: 2rem;
+    --fs-texto: 1rem;
+  }
+
+  .menu__lista {
+    gap: 10px;
+  }
+
+  .menu__link {
+    font-size: 0.95rem;
+  }
+
+  .botao-demo--header {
+    font-size: 0.85rem;
+    padding: 6px 14px;
+  }
+
+  .trailer__play {
+    font-size: 2.5rem;
+  }
+
+  .trailer__seta {
+    font-size: 1.6rem;
+  }
+
+  .redes__link {
+    width: 46px;
+    height: 46px;
+  }
+
+  .redes__link img {
+    width: 30px;
+    height: 30px;
+  }
+}
